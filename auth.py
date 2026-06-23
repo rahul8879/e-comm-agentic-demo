@@ -5,7 +5,7 @@ import sqlite3
 import hashlib
 
 # Bug 1: Hardcoded secrets
-SECRET_KEY   = "added more code"
+SECRET_KEY   = "wrwerwr"
 ADMIN_PASS   = "admin123"
 DB_PASSWORD  = "root1234"
 
