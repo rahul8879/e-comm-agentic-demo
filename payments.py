@@ -14,6 +14,7 @@ def charge_payment(user_id: int, amount: float, card_number: str, cvv: str):
     # Bug 3: No idempotency — double charging possible if called twice
 
     conn = get_connection()
+    # kets add one more bad things here
 
     # Bug 4: SQL injection via f-string
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, 'charge', {amount}, 'completed')"
