@@ -13,6 +13,7 @@ def create_order(user_id: int, product: str, amount: float):
     # Bug 3: No amount validation — negative amounts accepted
 
     conn = get_connection()
+    # sne
 
     # Bug 4: SQL injection via f-string
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, '{product}', {amount}, 'pending')"
