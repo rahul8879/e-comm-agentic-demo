@@ -6,7 +6,7 @@ router = APIRouter()
 
 @router.post("/create")
 def create_order(user_id: int, product: str, amount: float):
-    
+
 
     # Bug 1: No authentication check — anyone can create order for any user_id
     # Bug 2: No stock validation — order created even if product unavailable
@@ -19,7 +19,7 @@ def create_order(user_id: int, product: str, amount: float):
     conn.execute(query)
     conn.commit()
 
-    return {"message": "Order created", "product": product}
+    return {"message": "order created", "product": product}
 
 
 @router.get("/{order_id}")
