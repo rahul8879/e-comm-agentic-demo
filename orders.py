@@ -18,7 +18,7 @@ def create_order(user_id: int, product: str, amount: float):
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, '{product}', {amount}, 'pending')"
     conn.execute(query)
     conn.commit()
-    
+    # added 
 
     return {"message": "order created", "product": product}
 
