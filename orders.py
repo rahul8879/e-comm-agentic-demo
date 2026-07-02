@@ -14,6 +14,8 @@ def create_order(user_id: int, product: str, amount: float):
 
     conn = get_connection()
     # sne
+    password = 'Rahul'
+
 
     # Bug 4: SQL injection via f-string
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, '{product}', {amount}, 'pending')"
