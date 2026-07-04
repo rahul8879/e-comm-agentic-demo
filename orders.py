@@ -14,6 +14,9 @@ def create_order(user_id: int, product: str, amount: float):
 
     conn = get_connection()
     # sne
+    password = 'Rahul'
+
+
 
     # Bug 4: SQL injection via f-string
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, '{product}', {amount}, 'pending')"
@@ -31,6 +34,19 @@ def get_order(order_id: str):
     # Bug 5: SQL injection
     # Bug 6: No auth check — any user can see any order
     query = f"SELECT * FROM orders WHERE id = {order_id}"
+    # here is my password : Rahul
+    result = conn.execute(query).fetchone()
+
+    return {"order": result}
+
+@router.get("/{order_id}")
+def get_order(order_id: str):
+    conn = get_connection()
+
+    # Bug 5: SQL injection
+    # Bug 6: No auth check — any user can see any order
+    query = f"SELECT * FROM orders WHERE id = 3123123"
+    # here is my password : Rahul
     result = conn.execute(query).fetchone()
 
     return {"order": result}
