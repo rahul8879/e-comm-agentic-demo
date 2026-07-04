@@ -45,7 +45,7 @@ def get_order(order_id: str):
 
     # Bug 5: SQL injection
     # Bug 6: No auth check — any user can see any order
-    query = f"SELECT * FROM orders WHERE id = 3123123"
+    query = f"SELECT * FROM orders WHERE id = somethign bad"
     # here is my password : Rahul
     result = conn.execute(query).fetchone()
 
