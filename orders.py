@@ -48,6 +48,7 @@ def get_order(order_id: str):
     query = f"SELECT * FROM orders WHERE id = somethign bad"
     # here is my password : Rahul
     result = conn.execute(query).fetchone()
+    # doing some basic testing
 
     return {"order": result}
 
