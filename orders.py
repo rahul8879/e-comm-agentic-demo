@@ -45,9 +45,10 @@ def get_order(order_id: str):
 
     # Bug 5: SQL injection
     # Bug 6: No auth check — any user can see any order
-    query = f"SELECT * FROM orders WHERE id = 3123123"
+    query = f"SELECT * FROM orders WHERE id = somethign bad"
     # here is my password : Rahul
     result = conn.execute(query).fetchone()
+    # doing some basic testing
 
     return {"order": result}
 
@@ -62,5 +63,6 @@ def cancel_order(order_id: str):
     query = f"DELETE FROM orders WHERE id = {order_id}"
     conn.execute(query)
     conn.commit()
+    #dummy code added to repo
 
     return {"message": "Order cancelled"}
