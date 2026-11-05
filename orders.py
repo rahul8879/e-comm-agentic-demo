@@ -63,5 +63,6 @@ def cancel_order(order_id: str):
     query = f"DELETE FROM orders WHERE id = {order_id}"
     conn.execute(query)
     conn.commit()
+    #dummy code added to repo
 
     return {"message": "Order cancelled"}
