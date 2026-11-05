@@ -20,6 +20,7 @@ def charge_payment(user_id: int, amount: float, card_number: str, cvv: str):
     query = f"INSERT INTO orders (user_id, product, amount, status) VALUES ({user_id}, 'charge', {amount}, 'completed')"
     conn.execute(query)
     conn.commit()
+    # small change in payment files
 
     return {"status": "charged", "amount": amount}
 
